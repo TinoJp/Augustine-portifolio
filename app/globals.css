@@ -46,7 +46,7 @@
     --accent: 220 14% 14%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
     --border: 220 14% 18%;
     --input: 220 14% 18%;
     --ring: 210 100% 50%;
@@ -69,6 +69,10 @@
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  :focus-visible {
+    outline: 2px solid hsl(190 90% 55%);
+    outline-offset: 3px;
+  }
 }
 
 @layer utilities {
@@ -89,7 +93,6 @@
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -104,8 +107,22 @@
   background: hsl(var(--muted-foreground) / 0.5);
 }
 
-/* Selection */
 ::selection {
   background: hsl(210 100% 50% / 0.3);
   color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
