@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Twitter, Heart, Terminal } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Terminal } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Mail, href: 'johnaugustine900@gmail.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/TinoJp', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/augustine-john-b052a435b', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:johnaugustine900@gmail.com', label: 'Email' },
 ];
 
 const navLinks = [
@@ -16,6 +15,9 @@ const navLinks = [
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
+  { href: '#services', label: 'Learning' },
+  { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -24,7 +26,6 @@ export function Footer() {
     <footer className="relative border-t border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,18 +34,18 @@ export function Footer() {
           >
             <a href="#home" className="flex items-center gap-2 mb-4">
               <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500">
-                <Terminal className="w-5 h-5 text-white" />
+                <Terminal className="w-5 h-5 text-white" aria-hidden="true" />
               </div>
               <span className="font-bold text-xl">
-                <span className="text-gradient">Eng Augustine Jp</span>
+                <span className="text-gradient">Augustine Jp</span>
               </span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Computer Engineering Student passionate about backend development and cybersecurity. Building the future, one line of code at a time.
+              Computer Engineering student interested in backend development and cybersecurity,
+              learning through practical projects and hands-on work.
             </p>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +53,7 @@ export function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="font-semibold mb-4">Quick Links</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -62,10 +63,9 @@ export function Footer() {
                   {link.label}
                 </a>
               ))}
-            </div>
+            </nav>
           </motion.div>
 
-          {/* Social */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,25 +78,24 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.href.startsWith('http') ? '_blank' : undefined}
+                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="p-3 rounded-xl glass hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all group"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-cyan-400 transition-colors" />
+                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-cyan-400 transition-colors" aria-hidden="true" />
                 </a>
               ))}
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Engineer. All rights reserved.
+            &copy; {new Date().getFullYear()} Augustine Jp. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-rose-400 fill-rose-400" /> and lots of <span className="text-cyan-400">coffee</span>
+            Built with <Heart className="w-4 h-4 text-rose-400 fill-rose-400" aria-hidden="true" /> and lots of <span className="text-cyan-400">coffee</span>
           </p>
         </div>
       </div>
