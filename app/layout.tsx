@@ -5,7 +5,6 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { BackToTop } from '@/components/back-to-top';
-import { CustomCursor } from '@/components/custom-cursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,63 +16,56 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-mono',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio.dev'),
-  title: 'Engineer | Backend Developer & Cybersecurity Enthusiast',
-  description:
-    'Computer Engineering Student specializing in Java, Spring Boot, REST APIs, PostgreSql, C++, Python, and Cybersecurity.',
-  keywords: [
-    'Backend Developer',
-    'Java',
-    'Spring Boot',
-    'Cybersecurity',
-    'Software Engineer',
-    'REST APIs',
-    'PostgreSql',
-    'C++',
-    'Python',
-  ],
-  authors: [{ name: 'Eng Augustine' }],
-  creator: 'Eng Augustine',
+const siteUrl = 'https://augustine-portifolio.vercel.app';
 
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: 'Augustine Jp | Computer Engineering Student',
+  description:
+    'Computer Engineering student at the Dar es Salaam Institute of Technology, building software projects and developing practical skills in backend engineering and cybersecurity.',
+  keywords: [
+    'Augustine Jp',
+    'Computer Engineering',
+    'Backend Development',
+    'Cybersecurity',
+    'Java',
+    'Python',
+    'FastAPI',
+    'PostgreSQL',
+  ],
+  authors: [{ name: 'Augustine Jp' }],
+  creator: 'Augustine Jp',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://portfolio.dev',
-    siteName: 'Engineer Portfolio',
-    title: 'Eng Augustine  | Backend Developer & Cybersecurity Enthusiast',
+    locale: 'en_TZ',
+    url: siteUrl,
+    siteName: 'Augustine Jp Portfolio',
+    title: 'Augustine Jp | Computer Engineering Student',
     description:
-      'Computer Engineering Student specializing in Java, Spring Boot, REST APIs, PostgreSQL, C++, Python, and Cybersecurity.',
+      'Projects and learning journey in software development and cybersecurity.',
     images: [
       {
-        url: 'public/IMG_20250910_141529_792.jpg',
+        url: '/IMG_20250910_141529_792.jpg',
         width: 1200,
         height: 630,
-        alt: 'Engineer Portfolio',
+        alt: 'Augustine Jp',
       },
     ],
   },
-
   twitter: {
     card: 'summary_large_image',
-    title: 'Eng Augustine  | Backend Developer & Cybersecurity Enthusiast',
+    title: 'Augustine Jp | Computer Engineering Student',
     description:
-      'Computer Engineering Student specializing in Java, Spring Boot, REST APIs, SQL, C++, Python, and Cybersecurity.',
-    images: ['/public/IMG_20250910_141529_792.jpg'],
-    creator: '@engaugustine',
+      'Projects and learning journey in software development and cybersecurity.',
+    images: ['/IMG_20250910_141529_792.jpg'],
   },
-
   robots: {
     index: true,
     follow: true,
   },
-
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-
-  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -90,9 +82,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Comment out kwanza ili kuthibitisha chanzo */}
-          {/* <CustomCursor /> */}
-
           <ScrollProgress />
           {children}
           <BackToTop />
