@@ -1,21 +1,9 @@
 {
-  "name": "Engineer Portfolio",
-  "short_name": "Portfolio",
-  "description": "Computer Engineering Student Portfolio - Backend Developer & Cybersecurity Enthusiast",
+  "name": "Augustine Jp Portfolio",
+  "short_name": "Augustine",
+  "description": "Computer Engineering student portfolio focused on software development and cybersecurity.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
-  "theme_color": "#0ea5e9",
-  "icons": [
-    {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "theme_color": "#0ea5e9"
 }
