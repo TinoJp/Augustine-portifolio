@@ -10,22 +10,22 @@ const highlights = [
   {
     icon: Code2,
     title: 'Backend Engineering',
-    description: 'Building robust and scalable server-side applications with modern technologies.',
+    description: 'Learning to build maintainable server-side applications and practical backend features.',
   },
   {
     icon: Shield,
     title: 'Cybersecurity',
-    description: 'Exploring security fundamentals, digital forensics, ',
+    description: 'Studying defensive security, networking, Linux, and application security through authorised practice.',
   },
   {
     icon: Server,
     title: 'System Design',
-    description: 'Designing efficient database schemas and RESTful API architectures.',
+    description: 'Practising database modelling, API structure, and the design of reliable applications.',
   },
   {
     icon: BookOpen,
     title: 'Continuous Learning',
-    description: 'Always expanding my knowledge through courses, projects, and hands-on practice.',
+    description: 'Developing technical skills through coursework, personal projects, and hands-on practice.',
   },
 ];
 
@@ -39,7 +39,6 @@ export function About() {
         />
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -49,36 +48,32 @@ export function About() {
           >
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                Hello! I&apos;m a dedicated <span className="text-foreground font-medium">Computer Engineering Student</span> with a strong passion for technology and software development. My journey in tech began with a curiosity about how things work under the hood, which quickly evolved into a deep interest in backend engineering and cybersecurity.
+                Hello! I&apos;m a <span className="text-foreground font-medium">Computer Engineering student</span> with a strong interest in technology and software development. I enjoy understanding how systems work and turning that knowledge into practical projects.
               </p>
               <p>
-                I specialize in building <span className="text-cyan-400">scalable backend systems</span> using Java and Spring Boot, designing RESTful APIs, and working with relational databases like PostgreSQL. I believe in writing clean, maintainable code that solves real-world problems.
+                I am developing my backend engineering skills with Java, Spring Boot, Python, FastAPI, REST APIs, and relational databases such as PostgreSQL. I focus on learning sound development practices and applying them in working projects.
               </p>
               <p>
-                Beyond backend development, I&apos;m deeply fascinated by <span className="text-cyan-400">cybersecurity</span>. I spend time learning about network security, Linux administration, digital forensics, and security fundamentals. Understanding how to build secure systems is just as important as building functional ones.
+                I am also building my knowledge of <span className="text-cyan-400">cybersecurity</span>, especially defensive security, network fundamentals, Linux, and application security. I believe security should be considered throughout the development process.
               </p>
               <p>
-                I thrive on <span className="text-cyan-400">continuous learning</span> and staying up-to-date with the latest technologies and best practices. My goal is to become a professional software engineer who can architect reliable systems while keeping security at the forefront of every design decision.
+                My long-term goal is to become a professional engineer who can design, build, and secure reliable technology systems. I am open to opportunities that help me learn, contribute, and grow.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 pt-4">
               <span className="px-4 py-2 rounded-full glass text-sm font-medium text-cyan-400 border-cyan-500/20">
-                Problem Solver
+                Problem Solving
               </span>
               <span className="px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 border-blue-500/20">
-                Team Player
+                Teamwork
               </span>
               <span className="px-4 py-2 rounded-full glass text-sm font-medium text-purple-400 border-purple-500/20">
-                Fast Learner
-              </span>
-              <span className="px-4 py-2 rounded-full glass text-sm font-medium text-green-400 border-green-500/20">
-                Detail Oriented
+                Continuous Learning
               </span>
             </div>
           </motion.div>
 
-          {/* Right - Highlight cards */}
           <div className="grid sm:grid-cols-2 gap-4">
             {highlights.map((item, index) => (
               <motion.div
@@ -90,7 +85,7 @@ export function About() {
               >
                 <GlassCard glow="cyan" className="p-6 h-full">
                   <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 w-fit mb-4">
-                    <item.icon className="w-6 h-6 text-cyan-400" />
+                    <item.icon className="w-6 h-6 text-cyan-400" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
